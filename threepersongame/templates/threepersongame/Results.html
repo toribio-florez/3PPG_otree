@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <div align="center">Results</div>
+{% endblock %}
+
+{% block content %}
+    <table class="table-striped">
+    <tr>
+        <td align="center"><b>Player</b></td>
+        <td align="center"><b>Endowment</b></td>
+        <td align="center"><b>Events</b></td>
+    </tr>
+    <tr>
+        <td align="center"><b>Person A</b></td>
+        <td align="center">{{ group.endow_A }}</td>
+        <td>Sent to Person B: {{ group.allocation }};<br>
+            Deducted from Person C: {{ group.punishment }}</td>
+    </tr>
+    <tr>
+        <td><b>Person B</b></td>
+        <td align="center">{{ Constants.endow_B }}</td>
+        <td>Received from Person A: {{ group.allocation }};<br>
+            Received from Person C: {{ group.compensation }}</td>
+    </tr>
+    <tr>
+        <td><b>Person C</b></td>
+        <td align="center">{{ Constants.endow_C }}</td>
+        <td>Deducted from Person A: {{ group.punishment }};<br>
+            Sent to Person B: {{ group.compensation}}</td>
+    </tr>
+    </table>
+    <br>
+    <h5><div class="card" align="center">Your payoff as {{ player.role }} is <b>{{ player.payoff }}</b></div></h5>
+    {% next_button %}
+{% endblock %}
+
+

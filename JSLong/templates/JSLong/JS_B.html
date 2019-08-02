@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load  otree %}
+
+{% block title %}
+    Questionnaire - Part 3 of 4
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <b>Now, we will look at situations that turn out to <i>your advantage</i> and to the disadvantage of others.</b>
+            <br>
+            <br>
+            Indicate how much the following statements apply to you, from <b>0 - Not at all</b> to <b>5 -Extremely</b>:
+        </div>
+    </div>
+
+
+    {% formfields player.JS_B %}
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+    .table td{
+        text-align:left;}
+    </style>
+{% endblock %}

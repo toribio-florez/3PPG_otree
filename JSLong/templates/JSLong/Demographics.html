@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load  otree %}
+
+{% block title %}
+    Demographic Questions
+{% endblock %}
+
+{% block content %}
+    <div class="card" align="center">
+        <h5>Please answer the following questions.</h5>
+    </div>
+    {% formfield player.age %}
+    {% formfield player.gender %}
+    {% formfield player.nstudies %}
+    {% formfield player.degree %}
+
+    {% next_button %}
+
+{% endblock %}

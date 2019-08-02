@@ -1,0 +1,12 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <div class="card"><b>Welcome to the Three-Person Game!</b></div>
+{% endblock %}
+
+{% block content %}
+You will play this game with other 2 people in the role of Person A, B or C.
+    {% next_button %}
+
+{% endblock %}

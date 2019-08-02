@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+     <div align="center">You play as Person B</div>
+{% endblock %}
+
+{% block content %}
+    <div class="card" align="center">Your endowment is: <b>{{ player.endowment }}</b></div>
+    <br>
+    <div class = "action-checkbox">Person A has sent you <b>{{ group.allocation }}</b> from his/her endowment.</div>
+    <br>
+    No action is required from you on this page. Press 'Next' and wait for Person C to decide.
+</div>
+    {% next_button %}
+
+{% endblock %}

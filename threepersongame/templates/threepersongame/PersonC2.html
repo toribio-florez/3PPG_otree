@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <div align="center">You play as Person C</div>
+{% endblock %}
+
+{% block content %}
+    <div class="card" align="center">Your endowment is <b>{{ player.endowment }}</b></div>
+    <br>
+    {% if group.treatment == 0 or group.ambiguity_resolved == 1 %}
+        <div class="action-checkbox">Person A has sent to Person B <b>{{ group.allocation }}</b>.<br>
+            Person A's endowment was <b>{{ group.endow_A }}</b>.
+        </div>
+    {% endif %}
+    {% if group.treatment != 0 and group.ambiguity_resolved == 0 %}
+        <div class="action-checkbox">Person A has sent to Person B <b>{{ group.allocation }}</b>.<br>
+            Person A's endowment was a random amount <b>between 2 and 10€</b>).
+        </div>
+    {% endif %}
+    <br>
+    {% formfield group.punishment %}
+    {% formfield group.compensation %}
+    {% next_button %}
+
+{% endblock %}

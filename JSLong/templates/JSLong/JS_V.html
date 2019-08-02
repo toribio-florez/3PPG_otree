@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load  otree %}
+
+{% block title %}
+    Questionnaire - Part 1 of 4
+{% endblock %}
+
+{% block content %}
+    <div class="card" align="center">
+            <h5><b>How Do You React in Unfair Situations?</b><br>
+            People react quite differently in unfair situations. How about you?</h5>
+        </div>
+    <div class="card-body">
+            <b>First, we will look at situations to the advantage of others and to your <i>own disadvantage</i>.</b>
+            <br>
+            Indicate how much the following statements apply to you, from <b>0 - Not at all</b> to <b>5 -Extremely</b>:
+    </div>
+
+
+    {% formfields player.JS_V %}
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+    .table td{
+        text-align:left;}
+    </style>
+{% endblock %}

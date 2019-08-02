@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load  otree %}
+
+{% block title %}
+    Questionnaire - Part 2 of 4
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <b>Now, we will look at situations in which you notice or learn that <i>someone else</i> is being treated unfairly,<br> put at a disadvantage, or used.</b>
+            <br>
+            <br>
+            Indicate how much the following statements apply to you, from <b>0 - Not at all</b> to <b>5 -Extremely</b>:
+        </div>
+    </div>
+
+
+    {% formfields player.JS_O %}
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+    .table td{
+        text-align:left;}
+    </style>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <div class="card"><b>Comprehension Questions</b></div>
+{% endblock %}
+
+{% block content %}
+In order to check whether you understand the instructions, we want you to answer to the following questions:
+    {% next_button %}
+
+{% endblock %}

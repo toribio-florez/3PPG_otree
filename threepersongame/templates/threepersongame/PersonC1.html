@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <div align="center">You play as Person C</div>
+{% endblock %}
+
+{% block content %}
+    <div class="card" align="center">Your endowment is <b>{{ player.endowment }}</b></div>
+    <br>
+    <div class="action-checkbox">Person A has sent to Person B <b>{{ group.allocation }}</b> from his/her endowment
+        (a random amount <b>between 2 and 10€</b>).
+    </div>
+    <br>
+    <div class="alert alert-info">You can optionally pay <b>1€</b> from your own endowment to know <u>the exact
+        endowment that Person A received</u> before making any decision.
+        <br>
+        <br>
+        Do you wish to know Person A's exact endowment?
+        {% formfield group.ambiguity_resolved label="I want to pay 1€ for knowing the endowment of Person A." %}
+
+        {#    <button type="submit" name="ambiguity_resolved" value="True" class="btn btn-primary btn-large">Yes</button>#}
+        {#    <button type="submit" name="ambiguity_resolved" value="False" class="btn btn-primary btn-large">No</button>#}
+    </div>
+    {% next_button %}
+
+{% endblock %}
